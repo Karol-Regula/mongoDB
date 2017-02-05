@@ -25,4 +25,4 @@ for temp1 in d1:
   db.c.insert_one(temp1) # breaks because it can't connect to the db
   print "-----------"
 
-print str(db.students.count())
+print str(db.c.count())
