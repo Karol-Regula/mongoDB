@@ -2,7 +2,7 @@ from pymongo import MongoClient
 import csv
 
 server = MongoClient('159.89.150.100')
-db = server.dbName
+db = server.KiloByte
 c = db.students
 
 d1 = csv.DictReader(open("peeps.csv"))
@@ -22,5 +22,7 @@ for temp1 in d1:
       temp1['course' + str(i)] = temp2
       print "Course: " + str(temp2)
   print "Final??: " + str(temp1)
-  #c.insert_one(temp1) # breaks because it can't connect to the db
+  c.insert_one(temp1) # breaks because it can't connect to the db
   print "-----------"
+
+print str(db.students.count())
