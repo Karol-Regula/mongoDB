@@ -27,7 +27,14 @@ def v1():
     print "Final??: " + str(temp1)
     c.insert_one(temp1)
     print "-----------"
+  checkerV1()
 
+
+def checkerV1(): #creds to Evukelj for the boss checker
+  print "Checking that everything was sent accurately! Printing contents\n"
+  for doc in c.find(): #.find() returns all contents
+    print doc
+    print "--"
 
 def checkerV2(): #creds to Evukelj for the boss checker
   print "Checking that everything was sent accurately! Printing contents\n"
@@ -38,7 +45,7 @@ def checkerV2(): #creds to Evukelj for the boss checker
     print "course grades:"
     for course in doc['courses']:
       print course + " grade: " + str(doc['courses'][course])
-      
+
 def v2():
   for peep in d1:
     info = {} #one dictionary per peep
@@ -52,14 +59,7 @@ def v2():
       if peep['id'] == student['id']:
         info['courses'][student['code']]=student['mark']#filling courses section of peep's dict with the course and grade
     c.insert_one(info)
-  checkerV2()
+  #checkerV2()
 
 #v1()
-v2()
-
-
-
-
-
-  
-
+#v2()
