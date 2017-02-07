@@ -2,7 +2,7 @@ from pymongo import MongoClient
 import csv
 
 
-server = MongoClient('127.0.0.1')
+server = MongoClient('159.89.150.100')
 server.drop_database("KiloByte")
 db = server.KiloByte
 c = db.students
